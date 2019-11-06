@@ -12,15 +12,14 @@ export class AppService {
     return await this.userModel.find();
   }
 
-  async createNewUser(user: TaskDto) {
-    const newUser = new this.userModel(user);
-    await newUser.save();
-  }
-
-
   async getUser(user){
     const userToFind =  await this.userModel.findById(user);
     return userToFind;    
+  }
+
+  async createNewUser(user: TaskDto) {
+    const newUser = new this.userModel(user);
+    await newUser.save();
   }
 
 }

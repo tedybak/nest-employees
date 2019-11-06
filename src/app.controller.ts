@@ -18,7 +18,7 @@ export class AppController {
     return this.appService.getUser(param);
   }
 
-  @Post()
+  @Post('/users')
   createNewUser(@Body() user: TaskDto) {
     this.appService.createNewUser(user);
   }
